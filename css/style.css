@@ -1,0 +1,241 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap'); */
+@font-face {
+  font-family: AktivGrotesk-Regular;
+  src: url(../assets/fonts/AktivGrotesk-Regular.eot);
+  src: url(../assets/fonts/AktivGrotesk-Regular.eot) format("embedded-opentype"),
+    url(../assets/fonts/AktivGrotesk-Regular.woff2) format("woff2"),
+    url(../assets/fonts/AktivGrotesk-Regular.woff) format("woff"),
+    url(../assets/fonts/AktivGrotesk-Regular.ttf) format("truetype"),
+    url(../assets/fonts/AktivGrotesk-Regular.svg#AktivGrotesk-Regular) format("svg")
+}
+
+@font-face {
+  font-family: AktivGrotesk-Bold;
+  src: url(../assets/fonts/AktivGrotesk-Bold.eot);
+  src: url(../assets/fonts/AktivGrotesk-Bold.eot) format("embedded-opentype"),
+    url(../assets/fonts/AktivGrotesk-Bold.woff2) format("woff2"),
+    url(../assets/fonts/AktivGrotesk-Bold.woff) format("woff"),
+    url(../assets/fonts/AktivGrotesk-Bold.ttf) format("truetype"),
+    url(../assets/fonts/AktivGrotesk-Bold.svg#AktivGrotesk-Bold) format("svg")
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: AktivGrotesk-Bold;
+}
+
+.flag-icon {
+     font-family: AktivGrotesk-Regular;
+     font-size: 16px;
+     font-weight: 400;
+     height: 20px;
+     line-height: 24px;
+     margin: 0px 0px 0px 8px;
+     padding: 0px;
+     width: 20px;
+}
+
+.fs-small {
+  font-size: 0.7rem !important;
+}
+
+.blur {
+     background: hsla(0, 0%, 100%, .5);
+     backdrop-filter: blur(6px);
+     -webkit-backdrop-filter: blur(6px);
+     background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0% / auto padding-box border-box;
+     background-attachment: scroll;
+     background-color: #ffffff;
+     background-image: none;
+     background-position: 0% 0%;
+     background-repeat: repeat;
+     border: 1px solid rgb(222, 226, 230);
+     border-bottom: 1px solid rgb(222, 226, 230);
+     border-bottom-color: #dee2e6;
+
+     padding: 24px;
+}
+
+
+/*  create  vatriable  css */
+
+:root {
+     --black: #000000;
+     --white: #ffffff;
+     --dark: #000000;
+     --light: #F0F2F8;
+     --navyP: #001E62;
+     --navyS: #3154A5;
+     --inactive: #DFE3F0;
+     --navyD: #001442;
+     --yellow: #DAAA00;
+     --blue: #007bff;
+     --indigo: #6610f2;
+     --purple: #6f42c1;
+     --pink: #e83e8c;
+     --red: #dc3545;
+     --orange: #fd7e14;
+     --green: #28a745;
+     --teal: #20c997;
+     --cyan: #17a2b8;
+     --white: #fff;
+     --gray: #6c757d;
+     --gray-dark: #343a40;
+     --primary: #001e62;
+     --secondary: #6c757d;
+     --success: #00c7b1;
+     --info: #17a2b8;
+     --warning: #daaa00;
+     --danger: #dc3545;
+     --light: #f0f2f8;
+     --dark: #343a40;
+     --yellow: #daaa00;
+     --breakpoint-xs: 0;
+     --breakpoint-sm: 576px;
+     --breakpoint-md: 768px;
+     --breakpoint-lg: 992px;
+     --breakpoint-xl: 1200px;
+     --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+
+
+.blur {
+     background: hsla(0, 0%, 100%, .5);
+     backdrop-filter: blur(6px);
+     -webkit-backdrop-filter: blur(6px);
+}
+
+
+
+.text-navy-custom,
+.text-navy-custom.breadcrumb-item:before {
+     color: var(--navyP) !important;
+}
+
+.charts .nav-link.p-2 {
+     padding: 0.3rem !important;
+}
+
+
+
+
+
+
+.ar a .fa-arrow-circle-right {
+     transform: scaleX(-1) translateX(0);
+}
+
+.hover {
+     /* /*  transmation  10 px  */
+     transition-property: all;
+     background: #001e62;
+
+}
+
+
+.nav {
+     display: flex;
+     flex-wrap: wrap;
+     margin-bottom: 0;
+     list-style: none;
+}
+
+.nav-item-custom {
+     display: block;
+     padding: 10px;
+     color: #ffffff;
+     font-size: 16px;
+     font-weight: 400;
+
+     background: rgb(255, 255, 255) none repeat scroll 0px 0px / auto padding-box border-box;
+     background-attachment: scroll;
+     background-color: #ffffff;
+     background-image: none;
+     background-position: 0px 0px;
+     background-repeat: repeat;
+     bottom: auto;
+     clear: none;
+     color: #001e62;
+     font-family: AktivGrotesk-Regular;
+     font-size: 16px;
+     font-weight: 400;
+     height: 30px;
+     line-height: 24px;
+     margin: 0px;
+
+}
+
+
+.nav-item-custom,
+button {
+     color: #ffffff;
+     font-size: 16px;
+     font-weight: 400;
+     height: 30px;
+     line-height: 24px;
+     margin: 0px;
+     padding: 0px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     background: rgb(255, 255, 255) none repeat scroll 0px 0px / auto padding-box border-box;
+     border-radius: 1px solid rgb(0, 30, 98);
+     height: 30px;
+}
+
+
+
+
+.me-3 {
+     margin-bottom: 0.1rem !important;
+}
+
+.text-navy-custom,
+.text-navy-custom.breadcrumb-item:before {
+     color: var(--navyP) !important;
+
+
+}
+
+.nav-pills .nav-item {
+     margin-bottom: 6px;
+}
+
+.charts .nav-link.p-2 {
+     padding: 0.3rem !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+     color: #fff;
+     background-color: #001e62;
+}
+
+.nav-pills .nav-link {
+     background: 0 0;
+     border: 0;
+     border-radius: 0.25rem;
+}
+
+.nav-link {
+     display: block;
+     padding: 0.5rem 1rem;
+     display: block;
+     color: #0d6efd;
+     text-decoration: none;
+     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+
+.dropdown-item,
+.nav-link,
+a,
+button {
+     text-decoration: none;
+     display: block;
+     opacity: 1;
+     cursor: pointer;
+}
