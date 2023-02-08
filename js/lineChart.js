@@ -44,83 +44,83 @@ function loadPriceChartOne() {
 
   var ctx = document.getElementById("lineChart").getContext("2d");
    new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: headerLabels,
-      datasets: [
-        {
-          label: "",
-          borderColor: "#001E62",
-          pointBorderColor: "#001E62",
-          pointBackgroundColor: "#001E62",
-          pointHoverBackgroundColor: "#001E62",
-          pointHoverBorderColor: "#001E62",
-          pointHoverRadius: 10,
-          pointRadius: 3,
-          fill: false,
-          data: headerData,
-          color: "#001E62",
-          tension: 0.1,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
+     type: "line",
+     data: {
+       labels: headerLabels,
+       datasets: [
+         {
+           label: "",
+           borderColor: "#Daaa00",
+           pointBorderColor: "#Daaa00",
+           pointBackgroundColor: "#Daaa00",
+           pointHoverBackgroundColor: "#Daaa00",
+           pointHoverBorderColor: "#Daaa00",
+           pointHoverRadius: 10,
+           pointRadius: 3,
+           fill: false,
+           data: headerData,
+           color: "#Daaa00",
+           tension: 0.1,
+         },
+       ],
+     },
+     options: {
+       responsive: true,
 
-      plugins: {
-      legend: {
-        display: false,
-      },
-        showAllTooltips: true,
-        tooltip: {
-          titleFont: {
-            size: 16,
-          },
-          bodyFont: {
-            size: 16,
-          },
-          padding: 12,
-          displayColors: false,
-          backgroundColor: "rgba(255,255,255,0.8)",
-          titleColor: "#001E62",
-          callbacks: {
-            labelTextColor: function (context) {
-              return "#001E62";
-            },
-          },
-        },
-      },
-      scales: {
-        y: [
-          {
-            ticks: {
-              fontColor: "rgba(0,30,98,1)",
-              fontStyle: "bold",
-              beginAtZero: true,
-              maxTicksLimit: 5,
-              padding: 20,
-            },
-            gridLines: {
-              //   drawTicks: true,
-              display: true,
-            },
-          },
-        ],
-        x: [
-          {
-            gridLines: {
-              zeroLineColor: "transparent",
-            },
-            ticks: {
-              padding: 20,
-              fontColor: "rgba(0,30,98,1)",
-              fontStyle: "bold",
-            },
-          },
-        ],
-      },
-    },
-  });
+       plugins: {
+         legend: {
+           display: false,
+         },
+         showAllTooltips: true,
+         tooltip: {
+           titleFont: {
+             size: 16,
+           },
+           bodyFont: {
+             size: 16,
+           },
+           padding: 12,
+           displayColors: false,
+           backgroundColor: "rgba(255,255,255,0.8)",
+           titleColor: "#001E62",
+           callbacks: {
+             labelTextColor: function (context) {
+               return "#Daaa00";
+             },
+           },
+         },
+       },
+       scales: {
+         y: [
+           {
+             ticks: {
+               fontColor: "rgba(0,30,98,1)",
+               fontStyle: "bold",
+               beginAtZero: true,
+               maxTicksLimit: 5,
+               padding: 20,
+             },
+             gridLines: {
+               //   drawTicks: true,
+               display: true,
+             },
+           },
+         ],
+         x: [
+           {
+             gridLines: {
+               zeroLineColor: "transparent",
+             },
+             ticks: {
+               padding: 20,
+               fontColor: "rgba(0,30,98,1)",
+               fontStyle: "bold",
+             },
+           },
+         ],
+       },
+     },
+   });
   return;
 }
 

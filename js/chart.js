@@ -8,16 +8,16 @@ function generateLineChart(data, labels) {
          datasets: [
            {
              label: "",
-             borderColor: "#001E62",
-             pointBorderColor: "#001E62",
-             pointBackgroundColor: "#001E62",
-             pointHoverBackgroundColor: "#001E62",
-             pointHoverBorderColor: "#001E62",
+             borderColor: "#Daaa00",
+             pointBorderColor: "#Daaa00",
+             pointBackgroundColor: "#Daaa09",
+             pointHoverBackgroundColor: "#Daaa00",
+             pointHoverBorderColor: "#Daaa00",
              pointHoverRadius: 10,
              pointRadius: 3,
              fill: false,
              data: data.reverse(), //[.reverse(), //[100, 120, 150, 170, 180, 170, 150],
-             color: "#001E62",
+             color: "#Daaa00",
            },
          ],
        },
@@ -36,10 +36,10 @@ function generateLineChart(data, labels) {
              padding: 12,
              displayColors: false,
              backgroundColor: "rgba(255,255,255,0.8)",
-             titleColor: "#001E62",
+             titleColor: "#Daaa00",
              callbacks: {
                labelTextColor: function (context) {
-                 return "#001E62";
+                 return "#Daaa00";
                },
              },
            },
@@ -184,16 +184,16 @@ function loadItemsYear(menu, subMenu) {
       datasets: [
         {
           label: "",
-          borderColor: "#001E62",
-          pointBorderColor: "#001E62",
-          pointBackgroundColor: "#001E62",
-          pointHoverBackgroundColor: "#001E62",
-          pointHoverBorderColor: "#001E62",
+          borderColor: "#Daaa00",
+          pointBorderColor: "#Daaa00",
+          pointBackgroundColor: "#Daaa00",
+          pointHoverBackgroundColor: "#Daaa00",
+          pointHoverBorderColor: "#Daaa00",
           pointHoverRadius: 10,
           pointRadius: 3,
           fill: false,
           data: [3.8385565042735, 3.96110130769231].reverse(), //[180, 170, 100, 120, 150, 170, 150],
-          color: "#001E62",
+          color: "#Daaa00",
         },
       ],
     },
@@ -211,10 +211,10 @@ function loadItemsYear(menu, subMenu) {
           padding: 12,
           displayColors: false,
           backgroundColor: "rgba(255,255,255,0.8)",
-          titleColor: "#001E62",
+          titleColor: "#Daaa00",
           callbacks: {
             labelTextColor: function (context) {
-              return "#001E62";
+              return "#Daaa00";
             },
           },
         },
@@ -281,16 +281,16 @@ function loadItemsFiveYear(menu, subMenu) {
       datasets: [
         {
           label: "",
-          borderColor: "#001E62",
-          pointBorderColor: "#001E62",
-          pointBackgroundColor: "#001E62",
-          pointHoverBackgroundColor: "#001E62",
-          pointHoverBorderColor: "#001E62",
+          borderColor: "#Daaa00",
+          pointBorderColor: "#Daaa00",
+          pointBackgroundColor: "#Daaa00",
+          pointHoverBackgroundColor: "#Daaa00",
+          pointHoverBorderColor: "#Daaa00",
           pointHoverRadius: 10,
           pointRadius: 3,
           fill: false,
           data: [4.15584004012061].reverse(), //[180, 170, 100, 120, 150, 170, 150, 180, 170, 100, 120, 150],
-          color: "#001E62",
+          color: "#Daaa00",
         },
       ],
     },
@@ -308,10 +308,10 @@ function loadItemsFiveYear(menu, subMenu) {
           padding: 12,
           displayColors: false,
           backgroundColor: "rgba(255,255,255,0.8)",
-          titleColor: "#001E62",
+          titleColor: "#Daaa00",
           callbacks: {
             labelTextColor: function (context) {
-              return "#001E62";
+              return "#Daaa00";
             },
           },
         },
@@ -338,11 +338,11 @@ function loadItemsFiveYear(menu, subMenu) {
         x: [
           {
             gridLines: {
-              zeroLineColor: "transparent",
+              zeroLineColor: "#Daaa00",
             },
             ticks: {
               padding: 20,
-              fontColor: "rgba(0,30,98,1)",
+              fontColor: "#Daaa00",
               fontStyle: "bold",
             },
           },
@@ -376,16 +376,16 @@ function loadItemWeek(item) {
       datasets: [
         {
           label: "",
-          borderColor: "#001E62",
-          pointBorderColor: "#001E62",
-          pointBackgroundColor: "#001E62",
-          pointHoverBackgroundColor: "#001E62",
-          pointHoverBorderColor: "#001E62",
+          borderColor: "#Daaa00",
+          pointBorderColor: "#Daaa00",
+          pointBackgroundColor: "#Daaa00",
+          pointHoverBackgroundColor: "#Daaa00",
+          pointHoverBorderColor: "#Daaa00",
           pointHoverRadius: 10,
           pointRadius: 3,
           fill: false,
           data: data.reverse(),
-          color: "#001E62",
+          color: "#Daaa00",
         },
       ],
     },
@@ -448,3 +448,7 @@ function loadItemWeek(item) {
   };
   new Chart(item, options);
 }
+
+
+window.addEventListener("load", function () {
+          loadItems("USD", "w")});
