@@ -1,29 +1,29 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap'); */
 @font-face {
-  font-family: AktivGrotesk-Regular;
-  src: url(../assets/fonts/AktivGrotesk-Regular.eot);
-  src: url(../assets/fonts/AktivGrotesk-Regular.eot) format("embedded-opentype"),
-    url(../assets/fonts/AktivGrotesk-Regular.woff2) format("woff2"),
-    url(../assets/fonts/AktivGrotesk-Regular.woff) format("woff"),
-    url(../assets/fonts/AktivGrotesk-Regular.ttf) format("truetype"),
-    url(../assets/fonts/AktivGrotesk-Regular.svg#AktivGrotesk-Regular) format("svg")
+     font-family: AktivGrotesk-Regular;
+     src: url(../assets/fonts/AktivGrotesk-Regular.eot);
+     src: url(../assets/fonts/AktivGrotesk-Regular.eot) format("embedded-opentype"),
+          url(../assets/fonts/AktivGrotesk-Regular.woff2) format("woff2"),
+          url(../assets/fonts/AktivGrotesk-Regular.woff) format("woff"),
+          url(../assets/fonts/AktivGrotesk-Regular.ttf) format("truetype"),
+          url(../assets/fonts/AktivGrotesk-Regular.svg#AktivGrotesk-Regular) format("svg")
 }
 
 @font-face {
-  font-family: AktivGrotesk-Bold;
-  src: url(../assets/fonts/AktivGrotesk-Bold.eot);
-  src: url(../assets/fonts/AktivGrotesk-Bold.eot) format("embedded-opentype"),
-    url(../assets/fonts/AktivGrotesk-Bold.woff2) format("woff2"),
-    url(../assets/fonts/AktivGrotesk-Bold.woff) format("woff"),
-    url(../assets/fonts/AktivGrotesk-Bold.ttf) format("truetype"),
-    url(../assets/fonts/AktivGrotesk-Bold.svg#AktivGrotesk-Bold) format("svg")
+     font-family: AktivGrotesk-Bold;
+     src: url(../assets/fonts/AktivGrotesk-Bold.eot);
+     src: url(../assets/fonts/AktivGrotesk-Bold.eot) format("embedded-opentype"),
+          url(../assets/fonts/AktivGrotesk-Bold.woff2) format("woff2"),
+          url(../assets/fonts/AktivGrotesk-Bold.woff) format("woff"),
+          url(../assets/fonts/AktivGrotesk-Bold.ttf) format("truetype"),
+          url(../assets/fonts/AktivGrotesk-Bold.svg#AktivGrotesk-Bold) format("svg")
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: AktivGrotesk-Bold;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     font-family: AktivGrotesk-Bold;
 }
 
 .flag-icon {
@@ -38,7 +38,7 @@
 }
 
 .fs-small {
-  font-size: 0.7rem !important;
+     font-size: 0.7rem !important;
 }
 
 .blur {
@@ -66,7 +66,7 @@
      --white: #ffffff;
      --dark: #000000;
      --light: #F0F2F8;
-     --navyP: #001E62;
+     --navyP: #000000;
      --navyS: #3154A5;
      --inactive: #DFE3F0;
      --navyD: #001442;
@@ -159,7 +159,7 @@
      background-repeat: repeat;
      bottom: auto;
      clear: none;
-     color: #001e62;
+     color: var(--yellow);
      font-family: AktivGrotesk-Regular;
      font-size: 16px;
      font-weight: 400;
@@ -211,7 +211,7 @@ button {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
      color: #fff;
-     background-color: #001e62;
+     background-color: var(--navyP);
 }
 
 .nav-pills .nav-link {
@@ -224,7 +224,7 @@ button {
      display: block;
      padding: 0.5rem 1rem;
      display: block;
-     color: #0d6efd;
+     color: var(--yellow);
      text-decoration: none;
      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
