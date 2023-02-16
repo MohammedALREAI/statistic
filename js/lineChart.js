@@ -91,7 +91,7 @@ function loadPriceChartOne() {
          },
        },
        scales: {
-         y: [
+         y:
            {
              ticks: {
                fontColor: "rgba(0,30,98,1)",
@@ -105,8 +105,7 @@ function loadPriceChartOne() {
                display: true,
              },
            },
-         ],
-         x: [
+         x:
            {
              gridLines: {
                zeroLineColor: "transparent",
@@ -117,7 +116,7 @@ function loadPriceChartOne() {
                fontStyle: "bold",
              },
            },
-         ],
+
        },
      },
    });

@@ -1,5 +1,4 @@
 function loadBarChart() {
-     console.log("loadBarChart");
      const language = document.querySelector("html").getAttribute("lang") || "en";
   const labelArrayAr = [
     "ن1",
@@ -77,7 +76,7 @@ function loadBarChart() {
          },
        },
        scales: {
-         y: [
+         y:
            {
              ticks: {
                fontColor: "rgba(0,30,98,1)",
@@ -91,8 +90,7 @@ function loadBarChart() {
                display: false,
              },
            },
-         ],
-         x: [
+         x:
            {
              gridLines: {
                zeroLineColor: "transparent",
@@ -103,7 +101,7 @@ function loadBarChart() {
                fontStyle: "bold",
              },
            },
-         ],
+
        },
      },
    });
@@ -114,6 +112,6 @@ function loadBarChart() {
 }
 window.addEventListener("load", function () {
      loadBarChart();
-     
+
 });
 

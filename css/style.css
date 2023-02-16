@@ -1,24 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap'); */
-@font-face {
-     font-family: AktivGrotesk-Regular;
-     src: url(../assets/fonts/AktivGrotesk-Regular.eot);
-     src: url(../assets/fonts/AktivGrotesk-Regular.eot) format("embedded-opentype"),
-          url(../assets/fonts/AktivGrotesk-Regular.woff2) format("woff2"),
-          url(../assets/fonts/AktivGrotesk-Regular.woff) format("woff"),
-          url(../assets/fonts/AktivGrotesk-Regular.ttf) format("truetype"),
-          url(../assets/fonts/AktivGrotesk-Regular.svg#AktivGrotesk-Regular) format("svg")
-}
-
-@font-face {
-     font-family: AktivGrotesk-Bold;
-     src: url(../assets/fonts/AktivGrotesk-Bold.eot);
-     src: url(../assets/fonts/AktivGrotesk-Bold.eot) format("embedded-opentype"),
-          url(../assets/fonts/AktivGrotesk-Bold.woff2) format("woff2"),
-          url(../assets/fonts/AktivGrotesk-Bold.woff) format("woff"),
-          url(../assets/fonts/AktivGrotesk-Bold.ttf) format("truetype"),
-          url(../assets/fonts/AktivGrotesk-Bold.svg#AktivGrotesk-Bold) format("svg")
-}
-
 * {
      padding: 0;
      margin: 0;

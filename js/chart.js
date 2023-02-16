@@ -48,7 +48,7 @@ function generateLineChart(data, labels) {
            },
          },
          scales: {
-           y: [
+           y:
              {
                ticks: {
                  fontColor: "rgba(0,30,98,1)",
@@ -62,8 +62,8 @@ function generateLineChart(data, labels) {
                  display: false,
                },
              },
-           ],
-           x: [
+
+           x:
              {
                gridLines: {
                  zeroLineColor: "transparent",
@@ -74,14 +74,13 @@ function generateLineChart(data, labels) {
                  fontStyle: "bold",
                },
              },
-           ],
+
          },
        },
      };
      return options;
 }
 function loadItems(menu,subMenu) {
-     console.log("loadItems", `barChart${menu}One`);
   let  context=null
       context = document.getElementById(`barChart${menu}One`).getContext("2d");
 
@@ -223,7 +222,7 @@ function loadItemsYear(menu, subMenu) {
         },
       },
       scales: {
-        y: [
+        y:
           {
             ticks: {
               fontColor: "rgba(0,30,98,1)",
@@ -237,8 +236,7 @@ function loadItemsYear(menu, subMenu) {
               display: false,
             },
           },
-        ],
-        x: [
+        x:
           {
             gridLines: {
               zeroLineColor: "transparent",
@@ -249,7 +247,6 @@ function loadItemsYear(menu, subMenu) {
               fontStyle: "bold",
             },
           },
-        ],
       },
     },
   };
@@ -320,7 +317,7 @@ function loadItemsFiveYear(menu, subMenu) {
         },
       },
       scales: {
-        y: [
+        y:
           {
             ticks: {
               fontColor: "rgba(0,30,98,1)",
@@ -334,8 +331,8 @@ function loadItemsFiveYear(menu, subMenu) {
               display: true,
             },
           },
-        ],
-        x: [
+
+        x:
           {
             gridLines: {
               zeroLineColor: "#Daaa00",
@@ -346,7 +343,7 @@ function loadItemsFiveYear(menu, subMenu) {
               fontStyle: "bold",
             },
           },
-        ],
+
       },
     },
   };
