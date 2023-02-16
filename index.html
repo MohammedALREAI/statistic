@@ -53,671 +53,710 @@
      <main>
 
           <body>
-
-               <div class="container">
-                    <div class="row mb-4 justify-content-center" id="eibor-data">
-                         <div class="col-11">
-                              <div class="blur p-4 rounded-2 border aos-init aos-animate " data-aos="fade-up">
-                                   <div class="row mb-4">
-                                        <div class="col-lg-7">
-                                             <h4 class="font-b text-navy-custom mb-0">أسعار إيبور</h4>
-                                             <p class="font-r text-navy-custom fs-6">
-                                                  آخر تحديث للموقع:
-
-                                                  الإثنين 06 فبراير 2023 12:15:19 م
-                                             </p>
-                                        </div>
-                                        <div class="col-lg-5 text-lg-end">
-                                             <a href="/ar/forex-eibor/eibor-rates/"
-                                                  class="fs-6 font-m text-navy-custom w-100 d-flex justify-content-end">
-                                                  <p class="d-inline-block text-left hoverALL mx-2 mb-0">الكل</p>
-                                                  <i
-                                                       class="fa-solid fa-circle-arrow-left d-flex align-items-center"></i>
-                                             </a>
-
-                                        </div>
-                                   </div>
-                                   <div class="row">
-                                        <div class="col-12">
-                                             <canvas id="lineChart" width="965" height="482"
-                                                  style="display: block; box-sizing: border-box; height: 482px; width: 965px;"></canvas>
-                                        </div>
-                                   </div>
+               <section class="charts position-relative overflow-hidden" id="الإحصاءات المالية والنقدية">
+                    <img src="./assets/flags/bg-patern.svg" alt="patern"
+                         class="position-absolute float-end w-100 charts-bg" />
+                    <div class="container">
+                         <div class="row mb-4">
+                              <div class="col-12">
+                                   <h2 class="display-4 text-navy-custom font-b mb-4">الإحصاءات المالية والنقدية</h2>
                               </div>
                          </div>
                     </div>
-
-
-                    <div class="row mb-4">
-
-
-                         <div class="col-lg-7 mb-4 mb-lg-0" id="exchange-rate-data">
-
-                              <div class="blur p-4 rounded-2 border fix-height-charts-tabs h-100">
-                                   <div class="row mb-4">
-                                        <div class="col-lg-7">
-                                             <h4 class="font-b text-navy-custom mb-0"> أسعار الصرف‎</h4>
-                                             <p class="font-r text-navy-custom fs-6">
-                                                  آخر تحديث للموقع:
-                                                  الجمعة 03 فبراير 2023 </p>
-                                        </div>
-                                        <div class="col-lg-5 text-lg-end">
-                                             <a href="/ar/forex-eibor/exchange-rates/"
-                                                  class="fs-6 font-m text-navy-custom w-100 d-flex justify-content-end">
-                                                  <p class="d-inline-block mx-2 mb-0">الكل</p>
-                                                  <i
-                                                       class="fa-solid fa-circle-arrow-left d-flex align-items-center"></i>
-                                             </a>
-                                        </div>
-                                   </div>
-                                   <div class="row">
-                                        <div class="col-12">
-                                             <div class="mobile-overflow">
-                                                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                                       <li class="nav-item me-3" role="presentation nav-item-custom">
-                                                            <button
-                                                                 class="nav-link p-2 d-flex align-items-center active"
-                                                                 id="pills-usd-tab" type="button" role="tab"
-                                                                 onclick='loadItems("USD", "w")' data-bs-toggle="pill"
-                                                                 data-bs-target="#pills-usd" type="button" role="tab"
-                                                                 aria-controls="pills-usd" aria-selected="true">
-                                                                 <img src="./assets/flags/usd.svg" alt="not found"
-                                                                      class="me-2 flag-icon align-middle">
-
-
-                                                                 <p class="align-middle fs-small font-r m-0"> دولار
-                                                                      امريكي
-                                                                      <b id="usd_current_price"></b>
-                                                                 </p>
-                                                            </button>
-                                                       </li>
-                                                       <li class="nav-item me-3 nav-item-custom" role="presentation">
-                                                            <button class="nav-link p-2 d-flex align-items-center"
-                                                                 id="pills-euro-tab" data-bs-toggle="pill"
-                                                                 data-bs-target="#pills-euro" type="button" role="tab"
-                                                                 onclick='loadItems("EUR", "w")'
-                                                                 aria-controls="pills-euro" aria-selected="false">
-                                                                 <img src="./assets/flags/gbp.svg" alt="not found"
-                                                                      class="me-2 flag-icon align-middle">
-                                                                 <p class="align-middle fs-small font-r m-0 p-0 m-0">
-                                                                      يورو
-                                                                      <b id="eur_current_price"></b>
-                                                                 </p>
-                                                            </button>
-                                                       </li>
-                                                       <li class="nav-item me-3 nav-item-custom" role="presentation">
-                                                            <button class="nav-link p-2 d-flex align-items-center"
-                                                                 id="pills-chf-tab" data-bs-toggle="pill"
-                                                                 data-bs-target="#pills-chf" type="button" role="tab"
-                                                                 onclick='loadItems("CHF", "w")'
-                                                                 aria-controls="pills-chf" aria-selected="false">
-                                                                 <img src="./assets/flags/chf.svg" alt="not found"
-                                                                      class="me-2 flag-icon align-middle">
-                                                                 <p class="align-middle fs-small font-r m-0">فرنك سويسري
-                                                                      <b id="chf_current_price"></b>
-                                                                 </p>
-                                                            </button>
-                                                       </li>
-                                                       <li class="nav-item me-3 nav-item-custom " role="presentation">
-                                                            <button class="nav-link p-2 d-flex align-items-center"
-                                                                 id="pills-gbp-tab" data-bs-toggle="pill"
-                                                                 data-bs-target="#pills-gbp" type="button" role="tab"
-                                                                 onclick='loadItems("GBP", "w")'
-                                                                 aria-controls="pills-gbp" aria-selected="false">
-                                                                 <img src="./assets/flags/gbp.svg" alt="not found"
-                                                                      class="me-2 flag-icon align-middle">
-                                                                 <p class="align-middle fs-small font-r m-0">جنيه
-                                                                      استرليني
-                                                                      <b id="gbp_current_price">4.450976</b>
-                                                                 </p>
-                                                            </button>
-                                                       </li>
-
-                                                       <li class="nav-item me-3 nav-item-custom" role="presentation">
-                                                            <button class="nav-link p-2 d-flex align-items-center"
-                                                                 id="pills-yen-tab" data-bs-toggle="pill"
-                                                                 data-bs-target="#pills-yen" type="button" role="tab"
-                                                                 onclick='loadItems("YEN", "w")'
-                                                                 aria-controls="pills-yen" aria-selected="false">
-                                                                 <img src="./assets/flags/yen.svg" alt="not found"
-                                                                      class="me-2 flag-icon align-middle">
-                                                                 <p class="align-middle fs-small font-r m-0">
-                                                                      ين ياباني
-                                                                      <b id="yen_current_price"></b>
-                                                                 </p>
-                                                            </button>
-                                                       </li>
-                                                  </ul>
-                                             </div>
-
-                                             <div class="tab-content" id="pills-tabContent">
-                                                  <!-- USD START -->
-                                                  <div class="tab-pane fade show active" id="pills-usd" role="tabpanel"
-                                                       aria-labelledby="pills-usd-tab">
-                                                       <ul class="nav nav-pills mb-3" id="pills-tabUsd" role="tablist">
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button
-                                                                      class="nav-link d-flex justify-content-center align-items-center p-2 font-r fs-small active"
-                                                                      id="pills-usd-h-tab"
-                                                                      onchange="loadItems('USD', 'h')"
-                                                                      data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-usd-h" type="button"
-                                                                      role="tab" aria-controls="pills-usd-h"
-                                                                      aria-selected="true">أسبوع
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button
-                                                                      class="nav-link d-flex justify-content-center align-items-center p-2 font-r fs-small"
-                                                                      id="pills-usd-d-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-usd-d" type="button"
-                                                                      onclick='loadItemsMath("USD","w")' role="tab"
-                                                                      aria-controls="pills-usd-d"
-                                                                      aria-selected="false">شهر
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button
-                                                                      class="nav-link d-flex justify-content-center align-items-center p-2 font-r fs-small"
-                                                                      id="pills-usd-w-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-usd-w" type="button"
-                                                                      onclick='loadItemsYear("USD","y")' role="tab"
-                                                                      aria-controls="pills-usd-w"
-                                                                      aria-selected="false">سنة
-                                                                      واحدة</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button
-                                                                      class="nav-link d-flex justify-content-center align-items-center p-2 font-r fs-small"
-                                                                      id="pills-usd-m-tab"
-                                                                      onclick="loadItemsFiveYear('USD','m')"
-                                                                      data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-usd-m" type="button"
-                                                                      role="tab" aria-controls="pills-usd-m"
-                                                                      aria-selected="false">خمس
-                                                                      سنوات</button>
-                                                            </li>
-                                                       </ul>
-                                                       <div class="tab-content" id="pills-tabUsdContent">
-                                                            <div class="tab-pane fade show active" id="pills-usd-h"
-                                                                 role="tabpanel" aria-labelledby="pills-usd-h-tab">
-                                                                 <canvas id="barChartUSDOne" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-usd-d" role="tabpanel"
-                                                                 aria-labelledby="pills-usd-d-tab">
-                                                                 <canvas id="barChartUSDTow" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-usd-w" role="tabpanel"
-                                                                 aria-labelledby="pills-usd-w-tab">
-                                                                 <canvas id="barChartUSDThree" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-usd-m" role="tabpanel"
-                                                                 aria-labelledby="pills-usd-m-tab">
-                                                                 <canvas id="barChartUSDFour" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-                                                            </div>
-                                                       </div>
-                                                  </div>
-                                                  <!-- USD END -->
-
-                                                  <!-- EURO START -->
-
-                                                  <div class="tab-pane fade" id="pills-euro" role="tabpanel"
-                                                       aria-labelledby="pills-euro-tab">
-                                                       <ul class="nav nav-pills mb-3" id="pills-tabEuro" role="tablist">
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick='loadItems("EUR", "w")'
-                                                                      class="nav-link p-2 font-r fs-small active"
-                                                                      id="pills-euro-h-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-euro-h" type="button"
-                                                                      role="tab" aria-controls="pills-euro-h"
-                                                                      aria-selected="true">أسبوع
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick="loadItemsMath('EUR', 'm')"
-                                                                      class="nav-link p-2 font-r fs-small"
-                                                                      id="pills-euro-d-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-euro-d" type="button"
-                                                                      role="tab" aria-controls="pills-euro-d"
-                                                                      aria-selected="false">شهر
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button class="nav-link p-2 font-r fs-small"
-                                                                      onclick="loadItemsYear('EUR', 'y')"
-                                                                      id="pills-euro-w-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-euro-w" type="button"
-                                                                      role="tab" aria-controls="pills-euro-w"
-                                                                      aria-selected="false">سنة
-                                                                      واحدة</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick="loadItemsFiveYear('EUR', '5y')"
-                                                                      class="nav-link p-2 font-r fs-small"
-                                                                      id="pills-euro-m-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-euro-m" type="button"
-                                                                      role="tab" aria-controls="pills-euro-m"
-                                                                      aria-selected="false">خمس
-                                                                      سنوات</button>
-                                                            </li>
-                                                       </ul>
-
-                                                       <div class="tab-content" id="pills-tabEuroContent">
-
-
-
-                                                            <div class="tab-pane fade show active" id="pills-euro-h"
-                                                                 role="tabpanel" aria-labelledby="pills-euro-h-tab">
-
-                                                                 <canvas id="barChartEUROne" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-
-
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-euro-d" role="tabpanel"
-                                                                 aria-labelledby="pills-euro-d-tab">
-                                                                 <canvas id="barChartEURTow" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-euro-w" role="tabpanel"
-                                                                 aria-labelledby="pills-euro-w-tab">
-                                                                 <canvas id="barChartEURThree" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-euro-m" role="tabpanel"
-                                                                 aria-labelledby="pills-euro-m-tab">
-                                                                 <canvas id="barChartEURFour" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-
-                                                            </div>
-                                                       </div>
-                                                  </div>
-                                                  <!-- EURO END -->
-
-                                                  <!-- CHF START -->
-                                                  <div class="tab-pane fade" id="pills-chf" role="tabpanel"
-                                                       aria-labelledby="pills-chf-tab">
-                                                       <ul class="nav nav-pills mb-3" id="pills-tabChf" role="tablist">
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick='loadItems("CHF", "w")'
-                                                                      class="nav-link p-2 font-r fs-small active"
-                                                                      id="pills-chf-h-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-chf-h" type="button"
-                                                                      role="tab" aria-controls="pills-chf-h"
-                                                                      aria-selected="true">أسبوع
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick="loadItemsMath('CHF', 'm')"
-                                                                      class="nav-link p-2 font-r fs-small"
-                                                                      id="pills-chf-d-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-chf-d" type="button"
-                                                                      role="tab" aria-controls="pills-chf-d"
-                                                                      aria-selected="false">شهر
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button class="nav-link p-2 font-r fs-small"
-                                                                      onclick="loadItemsYear('CHF', 'y')"
-                                                                      id="pills-chf-w-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-chf-w" type="button"
-                                                                      role="tab" aria-controls="pills-chf-w"
-                                                                      aria-selected="false">سنة
-                                                                      واحدة</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick="loadItemsFiveYear('CHF', '5y')"
-                                                                      class="nav-link p-2 font-r fs-small"
-                                                                      id="pills-chf-m-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-chf-m" type="button"
-                                                                      role="tab" aria-controls="pills-chf-m"
-                                                                      aria-selected="false">خمس
-                                                                      سنوات</button>
-                                                            </li>
-                                                       </ul>
-
-                                                       <div class="tab-content" id="pills-tabChfContent">
-
-
-
-                                                            <div class="tab-pane fade show active" id="pills-chf-h"
-                                                                 role="tabpanel" aria-labelledby="pills-chf-h-tab">
-
-                                                                 <canvas id="barChartCHFOne" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-
-
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-chf-d" role="tabpanel"
-                                                                 aria-labelledby="pills-chf-d-tab">
-                                                                 <canvas id="barChartCHFTow" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-chf-w" role="tabpanel"
-                                                                 aria-labelledby="pills-chf-w-tab">
-                                                                 <canvas id="barChartCHFThree" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-chf-m" role="tabpanel"
-                                                                 aria-labelledby="pills-chf-m-tab">
-                                                                 <canvas id="barChartCHFFour" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-                                                            </div>
-                                                       </div>
-                                                  </div>
-                                                  <!-- CHF END -->
-
-
-                                                  <!-- GBP START -->
-                                                  <div class="tab-pane fade" id="pills-gbp" role="tabpanel"
-                                                       aria-labelledby="pills-gbp-tab">
-                                                       <ul class="nav nav-pills mb-3" id="pills-tabChf" role="tablist">
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick='loadItems("GBP", "w")'
-                                                                      class="nav-link p-2 font-r fs-small active"
-                                                                      id="pills-gbp-h-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-gbp-h" type="button"
-                                                                      role="tab" aria-controls="pills-gbp-h"
-                                                                      aria-selected="true">أسبوع
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick="loadItemsMath('GBP', 'm')"
-                                                                      class="nav-link p-2 font-r fs-small"
-                                                                      id="pills-gbp-d-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-gbp-d" type="button"
-                                                                      role="tab" aria-controls="pills-gbp-d"
-                                                                      aria-selected="false">شهر
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button class="nav-link p-2 font-r fs-small"
-                                                                      onclick="loadItemsYear('GBP', 'y')"
-                                                                      id="pills-gbp-w-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-gbp-w" type="button"
-                                                                      role="tab" aria-controls="pills-gbp-w"
-                                                                      aria-selected="false">سنة
-                                                                      واحدة</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick="loadItemsFiveYear('GBP', '5y')"
-                                                                      class="nav-link p-2 font-r fs-small"
-                                                                      id="pills-gbp-m-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-gbp-m" type="button"
-                                                                      role="tab" aria-controls="pills-gbp-m"
-                                                                      aria-selected="false">خمس
-                                                                      سنوات</button>
-                                                            </li>
-                                                       </ul>
-
-                                                       <div class="tab-content" id="pills-tabChfContent">
-                                                            <div class="tab-pane fade show active" id="pills-gbp-h"
-                                                                 role="tabpanel" aria-labelledby="pills-gbp-h-tab">
-
-                                                                 <canvas id="barChartGBPOne" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-gbp-d" role="tabpanel"
-                                                                 aria-labelledby="pills-gbp-d-tab">
-                                                                 <canvas id="barChartGBPTow" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-gbp-w" role="tabpanel"
-                                                                 aria-labelledby="pills-gbp-w-tab">
-                                                                 <canvas id="barChartGBPThree" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-gbp-m" role="tabpanel"
-                                                                 aria-labelledby="pills-gbp-m-tab">
-                                                                 <canvas id="barChartGBPFour" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-                                                            </div>
-                                                       </div>
-                                                  </div>
-
-                                                  <!-- GBP END -->
-
-                                                  <!-- START YEN -->
-
-
-                                                  <div class="tab-pane fade" id="pills-yen" role="tabpanel"
-                                                       aria-labelledby="pills-yen-tab">
-                                                       <ul class="nav nav-pills mb-3" id="pills-tabChf" role="tablist">
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick='loadItems("YEN", "w")'
-                                                                      class="nav-link p-2 font-r fs-small active"
-                                                                      id="pills-yen-h-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-yen-h" type="button"
-                                                                      role="tab" aria-controls="pills-yen-h"
-                                                                      aria-selected="true">أسبوع
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick="loadItemsMath('YEN', 'm')"
-                                                                      class="nav-link p-2 font-r fs-small"
-                                                                      id="pills-yen-d-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-yen-d" type="button"
-                                                                      role="tab" aria-controls="pills-yen-d"
-                                                                      aria-selected="false">شهر
-                                                                      واحد</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button class="nav-link p-2 font-r fs-small"
-                                                                      onclick="loadItemsYear('YEN', 'y')"
-                                                                      id="pills-yen-w-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-yen-w" type="button"
-                                                                      role="tab" aria-controls="pills-yen-w"
-                                                                      aria-selected="false">سنة
-                                                                      واحدة</button>
-                                                            </li>
-                                                            <li class="nav-item me-2" role="presentation">
-                                                                 <button onclick="loadItemsFiveYear('YEN', '5y')"
-                                                                      class="nav-link p-2 font-r fs-small"
-                                                                      id="pills-yen-m-tab" data-bs-toggle="pill"
-                                                                      data-bs-target="#pills-yen-m" type="button"
-                                                                      role="tab" aria-controls="pills-yen-m"
-                                                                      aria-selected="false">خمس
-                                                                      سنوات</button>
-                                                            </li>
-                                                       </ul>
-
-                                                       <div class="tab-content" id="pills-tabChfContent">
-                                                            <div class="tab-pane fade show active" id="pills-yen-h"
-                                                                 role="tabpanel" aria-labelledby="pills-yen-h-tab">
-
-                                                                 <canvas id="barChartYENOne" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-yen-d" role="tabpanel"
-                                                                 aria-labelledby="pills-yen-d-tab">
-                                                                 <canvas id="barChartYENTow" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-yen-w" role="tabpanel"
-                                                                 aria-labelledby="pills-yen-w-tab">
-                                                                 <canvas id="barChartYENThree" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-yen-m" role="tabpanel"
-                                                                 aria-labelledby="pills-yen-m-tab">
-                                                                 <canvas id="barChartYENFour" width="395" height="197"
-                                                                      style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-                                                            </div>
-                                                       </div>
-                                                  </div>
-
-                                                  <!--  END Yan  -->
-
-
-
-                                             </div>
-                                        </div>
-                                   </div>
-
-
-
-
-
-                              </div>
-
-                         </div>
-
-
-                         <!--   start  Section  for  the  left   -->
-
-                         <div class="col-lg-5">
-                              <div class="blur p-4 rounded-2 border fix-height-charts mb-4 xxx aos-init aos-animate"
-                                   data-aos="fade-up">
-                                   <div class="row mb-4">
-                                        <div class="col-lg-6">
-                                             <h4 class="font-b text-navy-custom mb-0"> مؤشرات الأداء الاقتصادي</h4>
-                                        </div>
-                                        <div class="col-lg-6 text-lg-end">
-                                             <a href="/ar/forex-eibor/economic-indicators/"
-                                                  class="fs-6 font-m text-navy-custom w-100 d-flex justify-content-end">
-                                                  <p class="d-inline-block  mx-2 mb-0" tabindex="0">الكل</p>
-                                                  <i
-                                                       class="fa-solid fa-circle-arrow-left d-flex align-items-center"></i>
-                                             </a>
-                                        </div>
-                                   </div>
-                                   <div class="row">
-                                        <div class="col-12">
-                                             <canvas id="barChart-three" width="395" height="197"
-                                                  style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
-                                        </div>
-                                   </div>
-                              </div>
-
-                              <div id="keyInterestDiv">
-
-
-                                   <div class="blur p-4 rounded-2 border fix-height-charts">
+                    <div class="container">
+                         <div class="row mb-4 justify-content-center" id="eibor-data">
+                              <div class="col-11">
+                                   <div class="blur p-4 rounded-2 border aos-init aos-animate " data-aos="fade-up">
                                         <div class="row mb-4">
-                                             <div class="col-12">
-                                                  <h4 class="font-b text-navy-custom mb-0">سعر الفائدة الرئيسي</h4>
-
+                                             <div class="col-lg-7">
+                                                  <h4 class="font-b text-navy-custom mb-0">أسعار إيبور</h4>
                                                   <p class="font-r text-navy-custom fs-6">
                                                        آخر تحديث للموقع:
 
-                                                       الثلاثاء 07 فبراير 2023 09:00:16 ص </p>
+                                                       الإثنين 06 فبراير 2023 12:15:19 م
+                                                  </p>
+                                             </div>
+                                             <div class="col-lg-5 text-lg-end">
+                                                  <a href="/ar/forex-eibor/eibor-rates/"
+                                                       class="fs-6 font-m text-navy-custom w-100 d-flex justify-content-end">
+                                                       <p class="d-inline-block text-left hoverALL mx-2 mb-0">الكل</p>
+                                                       <i
+                                                            class="fa-solid fa-circle-arrow-left d-flex align-items-center"></i>
+                                                  </a>
+
                                              </div>
                                         </div>
-
                                         <div class="row">
                                              <div class="col-12">
-                                                  <div class="mobile-overflow">
-                                                       <table class="table table-striped border-0 mb-4">
-                                                            <thead>
-                                                                 <tr>
-                                                                      <th scope="col"
-                                                                           class="font-m fs-small text-navy-custom p-2 border-0">
-                                                                           المؤشر</th>
-                                                                      <th scope="col"
-                                                                           class="font-m fs-small text-navy-custom p-2 border-0">
-                                                                           القيمة</th>
-                                                                      <th scope="col"
-                                                                           class="font-m fs-small text-navy-custom p-2 border-0">
-                                                                           &nbsp;</th>
-                                                                 </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                 <tr>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           الإيبور لليلة
-                                                                           واحدة</td>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           4.50093000</td>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           &nbsp;</td>
-                                                                 </tr>
-                                                                 <tr>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           سعر الأساس</td>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           4.65000000</td>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           &nbsp;</td>
-                                                                 </tr>
-                                                                 <tr>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           سعر MLF/CMF</td>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           5.15000000</td>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           &nbsp;</td>
-                                                                 </tr>
-                                                                 <tr>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           دُنيا</td>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           4.37720000</td>
-                                                                      <td
-                                                                           class="font-r fs-small text-navy-custom p-2 border-0">
-                                                                           &nbsp;</td>
-                                                                 </tr>
-
-                                                            </tbody>
-                                                       </table>
-                                                  </div>
+                                                  <canvas id="lineChart" width="965" height="482"
+                                                       style="display: block; box-sizing: border-box; height: 482px; width: 965px;"></canvas>
                                              </div>
                                         </div>
                                    </div>
                               </div>
+                         </div>
+
+
+                         <div class="row mb-4">
+
+
+                              <div class="col-lg-7 mb-4 mb-lg-0" id="exchange-rate-data">
+
+                                   <div class="blur p-4 rounded-2 border fix-height-charts-tabs h-100">
+                                        <div class="row mb-4">
+                                             <div class="col-lg-7">
+                                                  <h4 class="font-b text-navy-custom mb-0"> أسعار الصرف‎</h4>
+                                                  <p class="font-r text-navy-custom fs-6">
+                                                       آخر تحديث للموقع:
+                                                       الجمعة 03 فبراير 2023 </p>
+                                             </div>
+                                             <div class="col-lg-5 text-lg-end">
+                                                  <a href="/ar/forex-eibor/exchange-rates/"
+                                                       class="fs-6 font-m text-navy-custom w-100 d-flex justify-content-end">
+                                                       <p class="d-inline-block mx-2 mb-0">الكل</p>
+                                                       <i
+                                                            class="fa-solid fa-circle-arrow-left d-flex align-items-center"></i>
+                                                  </a>
+                                             </div>
+                                        </div>
+                                        <div class="row">
+                                             <div class="col-12">
+                                                  <div class="mobile-overflow">
+                                                       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                            <li class="nav-item me-3"
+                                                                 role="presentation nav-item-custom">
+                                                                 <button
+                                                                      class="nav-link p-2 d-flex align-items-center active"
+                                                                      id="pills-usd-tab" type="button" role="tab"
+                                                                      onclick='loadItems("USD", "w")'
+                                                                      data-bs-toggle="pill" data-bs-target="#pills-usd"
+                                                                      type="button" role="tab" aria-controls="pills-usd"
+                                                                      aria-selected="true">
+                                                                      <img src="./assets/flags/usd.svg" alt="not found"
+                                                                           class="me-2 flag-icon align-middle">
+
+
+                                                                      <p class="align-middle fs-small font-r m-0"> دولار
+                                                                           امريكي
+                                                                           <b id="usd_current_price"></b>
+                                                                      </p>
+                                                                 </button>
+                                                            </li>
+                                                            <li class="nav-item me-3 nav-item-custom"
+                                                                 role="presentation">
+                                                                 <button class="nav-link p-2 d-flex align-items-center"
+                                                                      id="pills-euro-tab" data-bs-toggle="pill"
+                                                                      data-bs-target="#pills-euro" type="button"
+                                                                      role="tab" onclick='loadItems("EUR", "w")'
+                                                                      aria-controls="pills-euro" aria-selected="false">
+                                                                      <img src="./assets/flags/gbp.svg" alt="not found"
+                                                                           class="me-2 flag-icon align-middle">
+                                                                      <p
+                                                                           class="align-middle fs-small font-r m-0 p-0 m-0">
+                                                                           يورو
+                                                                           <b id="eur_current_price"></b>
+                                                                      </p>
+                                                                 </button>
+                                                            </li>
+                                                            <li class="nav-item me-3 nav-item-custom"
+                                                                 role="presentation">
+                                                                 <button class="nav-link p-2 d-flex align-items-center"
+                                                                      id="pills-chf-tab" data-bs-toggle="pill"
+                                                                      data-bs-target="#pills-chf" type="button"
+                                                                      role="tab" onclick='loadItems("CHF", "w")'
+                                                                      aria-controls="pills-chf" aria-selected="false">
+                                                                      <img src="./assets/flags/chf.svg" alt="not found"
+                                                                           class="me-2 flag-icon align-middle">
+                                                                      <p class="align-middle fs-small font-r m-0">فرنك
+                                                                           سويسري
+                                                                           <b id="chf_current_price"></b>
+                                                                      </p>
+                                                                 </button>
+                                                            </li>
+                                                            <li class="nav-item me-3 nav-item-custom "
+                                                                 role="presentation">
+                                                                 <button class="nav-link p-2 d-flex align-items-center"
+                                                                      id="pills-gbp-tab" data-bs-toggle="pill"
+                                                                      data-bs-target="#pills-gbp" type="button"
+                                                                      role="tab" onclick='loadItems("GBP", "w")'
+                                                                      aria-controls="pills-gbp" aria-selected="false">
+                                                                      <img src="./assets/flags/gbp.svg" alt="not found"
+                                                                           class="me-2 flag-icon align-middle">
+                                                                      <p class="align-middle fs-small font-r m-0">جنيه
+                                                                           استرليني
+                                                                           <b id="gbp_current_price">4.450976</b>
+                                                                      </p>
+                                                                 </button>
+                                                            </li>
+
+                                                            <li class="nav-item me-3 nav-item-custom"
+                                                                 role="presentation">
+                                                                 <button class="nav-link p-2 d-flex align-items-center"
+                                                                      id="pills-yen-tab" data-bs-toggle="pill"
+                                                                      data-bs-target="#pills-yen" type="button"
+                                                                      role="tab" onclick='loadItems("YEN", "w")'
+                                                                      aria-controls="pills-yen" aria-selected="false">
+                                                                      <img src="./assets/flags/yen.svg" alt="not found"
+                                                                           class="me-2 flag-icon align-middle">
+                                                                      <p class="align-middle fs-small font-r m-0">
+                                                                           ين ياباني
+                                                                           <b id="yen_current_price"></b>
+                                                                      </p>
+                                                                 </button>
+                                                            </li>
+                                                       </ul>
+                                                  </div>
+
+                                                  <div class="tab-content" id="pills-tabContent">
+                                                       <!-- USD START -->
+                                                       <div class="tab-pane fade show active" id="pills-usd"
+                                                            role="tabpanel" aria-labelledby="pills-usd-tab">
+                                                            <ul class="nav nav-pills mb-3" id="pills-tabUsd"
+                                                                 role="tablist">
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button
+                                                                           class="nav-link d-flex justify-content-center align-items-center p-2 font-r fs-small active"
+                                                                           id="pills-usd-h-tab"
+                                                                           onchange="loadItems('USD', 'h')"
+                                                                           data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-usd-h" type="button"
+                                                                           role="tab" aria-controls="pills-usd-h"
+                                                                           aria-selected="true">أسبوع
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button
+                                                                           class="nav-link d-flex justify-content-center align-items-center p-2 font-r fs-small"
+                                                                           id="pills-usd-d-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-usd-d" type="button"
+                                                                           onclick='loadItemsMath("USD","w")' role="tab"
+                                                                           aria-controls="pills-usd-d"
+                                                                           aria-selected="false">شهر
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button
+                                                                           class="nav-link d-flex justify-content-center align-items-center p-2 font-r fs-small"
+                                                                           id="pills-usd-w-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-usd-w" type="button"
+                                                                           onclick='loadItemsYear("USD","y")' role="tab"
+                                                                           aria-controls="pills-usd-w"
+                                                                           aria-selected="false">سنة
+                                                                           واحدة</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button
+                                                                           class="nav-link d-flex justify-content-center align-items-center p-2 font-r fs-small"
+                                                                           id="pills-usd-m-tab"
+                                                                           onclick="loadItemsFiveYear('USD','m')"
+                                                                           data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-usd-m" type="button"
+                                                                           role="tab" aria-controls="pills-usd-m"
+                                                                           aria-selected="false">خمس
+                                                                           سنوات</button>
+                                                                 </li>
+                                                            </ul>
+                                                            <div class="tab-content" id="pills-tabUsdContent">
+                                                                 <div class="tab-pane fade show active" id="pills-usd-h"
+                                                                      role="tabpanel" aria-labelledby="pills-usd-h-tab">
+                                                                      <canvas id="barChartUSDOne" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-usd-d"
+                                                                      role="tabpanel" aria-labelledby="pills-usd-d-tab">
+                                                                      <canvas id="barChartUSDTow" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-usd-w"
+                                                                      role="tabpanel" aria-labelledby="pills-usd-w-tab">
+                                                                      <canvas id="barChartUSDThree" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-usd-m"
+                                                                      role="tabpanel" aria-labelledby="pills-usd-m-tab">
+                                                                      <canvas id="barChartUSDFour" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <!-- USD END -->
+
+                                                       <!-- EURO START -->
+
+                                                       <div class="tab-pane fade" id="pills-euro" role="tabpanel"
+                                                            aria-labelledby="pills-euro-tab">
+                                                            <ul class="nav nav-pills mb-3" id="pills-tabEuro"
+                                                                 role="tablist">
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick='loadItems("EUR", "w")'
+                                                                           class="nav-link p-2 font-r fs-small active"
+                                                                           id="pills-euro-h-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-euro-h" type="button"
+                                                                           role="tab" aria-controls="pills-euro-h"
+                                                                           aria-selected="true">أسبوع
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick="loadItemsMath('EUR', 'm')"
+                                                                           class="nav-link p-2 font-r fs-small"
+                                                                           id="pills-euro-d-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-euro-d" type="button"
+                                                                           role="tab" aria-controls="pills-euro-d"
+                                                                           aria-selected="false">شهر
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button class="nav-link p-2 font-r fs-small"
+                                                                           onclick="loadItemsYear('EUR', 'y')"
+                                                                           id="pills-euro-w-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-euro-w" type="button"
+                                                                           role="tab" aria-controls="pills-euro-w"
+                                                                           aria-selected="false">سنة
+                                                                           واحدة</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick="loadItemsFiveYear('EUR', '5y')"
+                                                                           class="nav-link p-2 font-r fs-small"
+                                                                           id="pills-euro-m-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-euro-m" type="button"
+                                                                           role="tab" aria-controls="pills-euro-m"
+                                                                           aria-selected="false">خمس
+                                                                           سنوات</button>
+                                                                 </li>
+                                                            </ul>
+
+                                                            <div class="tab-content" id="pills-tabEuroContent">
+
+
+
+                                                                 <div class="tab-pane fade show active"
+                                                                      id="pills-euro-h" role="tabpanel"
+                                                                      aria-labelledby="pills-euro-h-tab">
+
+                                                                      <canvas id="barChartEUROne" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+
+
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-euro-d"
+                                                                      role="tabpanel"
+                                                                      aria-labelledby="pills-euro-d-tab">
+                                                                      <canvas id="barChartEURTow" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-euro-w"
+                                                                      role="tabpanel"
+                                                                      aria-labelledby="pills-euro-w-tab">
+                                                                      <canvas id="barChartEURThree" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-euro-m"
+                                                                      role="tabpanel"
+                                                                      aria-labelledby="pills-euro-m-tab">
+                                                                      <canvas id="barChartEURFour" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <!-- EURO END -->
+
+                                                       <!-- CHF START -->
+                                                       <div class="tab-pane fade" id="pills-chf" role="tabpanel"
+                                                            aria-labelledby="pills-chf-tab">
+                                                            <ul class="nav nav-pills mb-3" id="pills-tabChf"
+                                                                 role="tablist">
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick='loadItems("CHF", "w")'
+                                                                           class="nav-link p-2 font-r fs-small active"
+                                                                           id="pills-chf-h-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-chf-h" type="button"
+                                                                           role="tab" aria-controls="pills-chf-h"
+                                                                           aria-selected="true">أسبوع
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick="loadItemsMath('CHF', 'm')"
+                                                                           class="nav-link p-2 font-r fs-small"
+                                                                           id="pills-chf-d-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-chf-d" type="button"
+                                                                           role="tab" aria-controls="pills-chf-d"
+                                                                           aria-selected="false">شهر
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button class="nav-link p-2 font-r fs-small"
+                                                                           onclick="loadItemsYear('CHF', 'y')"
+                                                                           id="pills-chf-w-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-chf-w" type="button"
+                                                                           role="tab" aria-controls="pills-chf-w"
+                                                                           aria-selected="false">سنة
+                                                                           واحدة</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick="loadItemsFiveYear('CHF', '5y')"
+                                                                           class="nav-link p-2 font-r fs-small"
+                                                                           id="pills-chf-m-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-chf-m" type="button"
+                                                                           role="tab" aria-controls="pills-chf-m"
+                                                                           aria-selected="false">خمس
+                                                                           سنوات</button>
+                                                                 </li>
+                                                            </ul>
+
+                                                            <div class="tab-content" id="pills-tabChfContent">
+
+
+
+                                                                 <div class="tab-pane fade show active" id="pills-chf-h"
+                                                                      role="tabpanel" aria-labelledby="pills-chf-h-tab">
+
+                                                                      <canvas id="barChartCHFOne" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+
+
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-chf-d"
+                                                                      role="tabpanel" aria-labelledby="pills-chf-d-tab">
+                                                                      <canvas id="barChartCHFTow" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-chf-w"
+                                                                      role="tabpanel" aria-labelledby="pills-chf-w-tab">
+                                                                      <canvas id="barChartCHFThree" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-chf-m"
+                                                                      role="tabpanel" aria-labelledby="pills-chf-m-tab">
+                                                                      <canvas id="barChartCHFFour" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <!-- CHF END -->
+
+
+                                                       <!-- GBP START -->
+                                                       <div class="tab-pane fade" id="pills-gbp" role="tabpanel"
+                                                            aria-labelledby="pills-gbp-tab">
+                                                            <ul class="nav nav-pills mb-3" id="pills-tabChf"
+                                                                 role="tablist">
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick='loadItems("GBP", "w")'
+                                                                           class="nav-link p-2 font-r fs-small active"
+                                                                           id="pills-gbp-h-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-gbp-h" type="button"
+                                                                           role="tab" aria-controls="pills-gbp-h"
+                                                                           aria-selected="true">أسبوع
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick="loadItemsMath('GBP', 'm')"
+                                                                           class="nav-link p-2 font-r fs-small"
+                                                                           id="pills-gbp-d-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-gbp-d" type="button"
+                                                                           role="tab" aria-controls="pills-gbp-d"
+                                                                           aria-selected="false">شهر
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button class="nav-link p-2 font-r fs-small"
+                                                                           onclick="loadItemsYear('GBP', 'y')"
+                                                                           id="pills-gbp-w-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-gbp-w" type="button"
+                                                                           role="tab" aria-controls="pills-gbp-w"
+                                                                           aria-selected="false">سنة
+                                                                           واحدة</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick="loadItemsFiveYear('GBP', '5y')"
+                                                                           class="nav-link p-2 font-r fs-small"
+                                                                           id="pills-gbp-m-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-gbp-m" type="button"
+                                                                           role="tab" aria-controls="pills-gbp-m"
+                                                                           aria-selected="false">خمس
+                                                                           سنوات</button>
+                                                                 </li>
+                                                            </ul>
+
+                                                            <div class="tab-content" id="pills-tabChfContent">
+                                                                 <div class="tab-pane fade show active" id="pills-gbp-h"
+                                                                      role="tabpanel" aria-labelledby="pills-gbp-h-tab">
+
+                                                                      <canvas id="barChartGBPOne" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-gbp-d"
+                                                                      role="tabpanel" aria-labelledby="pills-gbp-d-tab">
+                                                                      <canvas id="barChartGBPTow" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-gbp-w"
+                                                                      role="tabpanel" aria-labelledby="pills-gbp-w-tab">
+                                                                      <canvas id="barChartGBPThree" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-gbp-m"
+                                                                      role="tabpanel" aria-labelledby="pills-gbp-m-tab">
+                                                                      <canvas id="barChartGBPFour" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+
+                                                       <!-- GBP END -->
+
+                                                       <!-- START YEN -->
+
+
+                                                       <div class="tab-pane fade" id="pills-yen" role="tabpanel"
+                                                            aria-labelledby="pills-yen-tab">
+                                                            <ul class="nav nav-pills mb-3" id="pills-tabChf"
+                                                                 role="tablist">
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick='loadItems("YEN", "w")'
+                                                                           class="nav-link p-2 font-r fs-small active"
+                                                                           id="pills-yen-h-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-yen-h" type="button"
+                                                                           role="tab" aria-controls="pills-yen-h"
+                                                                           aria-selected="true">أسبوع
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick="loadItemsMath('YEN', 'm')"
+                                                                           class="nav-link p-2 font-r fs-small"
+                                                                           id="pills-yen-d-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-yen-d" type="button"
+                                                                           role="tab" aria-controls="pills-yen-d"
+                                                                           aria-selected="false">شهر
+                                                                           واحد</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button class="nav-link p-2 font-r fs-small"
+                                                                           onclick="loadItemsYear('YEN', 'y')"
+                                                                           id="pills-yen-w-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-yen-w" type="button"
+                                                                           role="tab" aria-controls="pills-yen-w"
+                                                                           aria-selected="false">سنة
+                                                                           واحدة</button>
+                                                                 </li>
+                                                                 <li class="nav-item me-2" role="presentation">
+                                                                      <button onclick="loadItemsFiveYear('YEN', '5y')"
+                                                                           class="nav-link p-2 font-r fs-small"
+                                                                           id="pills-yen-m-tab" data-bs-toggle="pill"
+                                                                           data-bs-target="#pills-yen-m" type="button"
+                                                                           role="tab" aria-controls="pills-yen-m"
+                                                                           aria-selected="false">خمس
+                                                                           سنوات</button>
+                                                                 </li>
+                                                            </ul>
+
+                                                            <div class="tab-content" id="pills-tabChfContent">
+                                                                 <div class="tab-pane fade show active" id="pills-yen-h"
+                                                                      role="tabpanel" aria-labelledby="pills-yen-h-tab">
+
+                                                                      <canvas id="barChartYENOne" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-yen-d"
+                                                                      role="tabpanel" aria-labelledby="pills-yen-d-tab">
+                                                                      <canvas id="barChartYENTow" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-yen-w"
+                                                                      role="tabpanel" aria-labelledby="pills-yen-w-tab">
+                                                                      <canvas id="barChartYENThree" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+
+                                                                 </div>
+                                                                 <div class="tab-pane fade" id="pills-yen-m"
+                                                                      role="tabpanel" aria-labelledby="pills-yen-m-tab">
+                                                                      <canvas id="barChartYENFour" width="395"
+                                                                           height="197"
+                                                                           style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+
+                                                       <!--  END Yan  -->
+
+
+
+                                                  </div>
+                                             </div>
+                                        </div>
+
+
+
+
+
+                                   </div>
+
+                              </div>
+
+
+                              <!--   start  Section  for  the  left   -->
+
+                              <div class="col-lg-5">
+                                   <div class="blur p-4 rounded-2 border fix-height-charts mb-4 xxx aos-init aos-animate"
+                                        data-aos="fade-up">
+                                        <div class="row mb-4">
+                                             <div class="col-lg-6">
+                                                  <h4 class="font-b text-navy-custom mb-0"> مؤشرات الأداء الاقتصادي</h4>
+                                             </div>
+                                             <div class="col-lg-6 text-lg-end">
+                                                  <a href="/ar/forex-eibor/economic-indicators/"
+                                                       class="fs-6 font-m text-navy-custom w-100 d-flex justify-content-end">
+                                                       <p class="d-inline-block  mx-2 mb-0" tabindex="0">الكل</p>
+                                                       <i
+                                                            class="fa-solid fa-circle-arrow-left d-flex align-items-center"></i>
+                                                  </a>
+                                             </div>
+                                        </div>
+                                        <div class="row">
+                                             <div class="col-12">
+                                                  <canvas id="barChart-three" width="395" height="197"
+                                                       style="display: block; box-sizing: border-box; height: 197px; width: 395px;"></canvas>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                                   <div id="keyInterestDiv">
+
+
+                                        <div class="blur p-4 rounded-2 border fix-height-charts">
+                                             <div class="row mb-4">
+                                                  <div class="col-12">
+                                                       <h4 class="font-b text-navy-custom mb-0">سعر الفائدة الرئيسي</h4>
+
+                                                       <p class="font-r text-navy-custom fs-6">
+                                                            آخر تحديث للموقع:
+
+                                                            الثلاثاء 07 فبراير 2023 09:00:16 ص </p>
+                                                  </div>
+                                             </div>
+
+                                             <div class="row">
+                                                  <div class="col-12">
+                                                       <div class="mobile-overflow">
+                                                            <table class="table table-striped border-0 mb-4">
+                                                                 <thead>
+                                                                      <tr>
+                                                                           <th scope="col"
+                                                                                class="font-m fs-small text-navy-custom p-2 border-0">
+                                                                                المؤشر</th>
+                                                                           <th scope="col"
+                                                                                class="font-m fs-small text-navy-custom p-2 border-0">
+                                                                                القيمة</th>
+                                                                           <th scope="col"
+                                                                                class="font-m fs-small text-navy-custom p-2 border-0">
+                                                                                &nbsp;</th>
+                                                                      </tr>
+                                                                 </thead>
+                                                                 <tbody>
+                                                                      <tr>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                الإيبور لليلة
+                                                                                واحدة</td>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                4.50093000</td>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                &nbsp;</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                سعر الأساس</td>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                4.65000000</td>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                &nbsp;</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                سعر MLF/CMF</td>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                5.15000000</td>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                &nbsp;</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                دُنيا</td>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                4.37720000</td>
+                                                                           <td
+                                                                                class="font-r fs-small text-navy-custom p-2 border-0">
+                                                                                &nbsp;</td>
+                                                                      </tr>
+
+                                                                 </tbody>
+                                                            </table>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                              </div>
+                              <!--  end section   -->
+
+
 
                          </div>
-                         <!--  end section   -->
-
-
-
                     </div>
-               </div>
-               </div>
 
-               </div>
-
-
-
-
-
-               </div>
+               </section>
 
                <script src="./js/bootstrap.bundle.min.js"></script>
                <script src="./js/main.js"></script>
