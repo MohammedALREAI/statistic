@@ -1,0 +1,363 @@
+@media (max-width: 1399.98px) {
+     .information .tab-content {
+          width: 480px;
+          height: 480px;
+     }
+
+     .information .nav-item:first-child {
+          top: 8%;
+          left: 9%;
+     }
+
+     .information .nav-item:nth-child(2) {
+          right: 16%;
+     }
+
+     .information .nav-item:nth-child(3) {
+          right: 11.6%;
+     }
+
+     .information .nav-item:nth-child(4) {
+          top: 96%;
+          left: 26%;
+     }
+
+     .information .nav-item:nth-child(5) {
+          top: 50%;
+          left: 10%;
+     }
+}
+
+@media (max-width: 1199.98px) {
+     .information .tab-content {
+          width: 450px;
+          height: 450px;
+     }
+
+     .information .nav-item:first-child {
+          top: 8%;
+          left: 2%;
+     }
+
+     .information .nav-item:nth-child(2) {
+          right: 11%;
+     }
+
+     .information .nav-item:nth-child(3) {
+          right: 6%;
+     }
+
+     .information .nav-item:nth-child(4) {
+          top: 99%;
+     }
+
+     .information .nav-item:nth-child(5) {
+          top: 50%;
+          left: 4%;
+     }
+}
+
+@media (max-width: 991.98px) {
+     .information .nav-item .nav-link h4 {
+          font-size: 1rem;
+     }
+
+     .information .nav-item:first-child {
+          top: 9%;
+          left: 3%;
+     }
+
+     .information .nav-item h4 {
+          width: 150px;
+     }
+
+     .information .nav-item:nth-child(2) {
+          right: 9%;
+     }
+
+     .information .nav-item:nth-child(3) {
+          right: 4%;
+          top: 64%;
+     }
+
+     .information .nav-item:nth-child(4) {
+          top: 98%;
+     }
+
+     .information .nav-item:nth-child(5) {
+          top: 50%;
+          left: 3%;
+     }
+
+     .information .tab-content::after {
+          animation: 1.5s transitionS-2 infinite linear;
+     }
+
+     .information .tab-content::before {
+          animation: 1.5s .1s transitionS-1 infinite linear;
+     }
+
+     .information .content-tab {
+          padding: 5rem 0;
+     }
+
+     .information {
+          padding: 80px 0;
+     }
+
+     .information h2 {
+          font-size: 35px;
+     }
+}
+
+@media (max-width: 767.98px) {
+     .information .nav-item:first-child {
+          top: 9%;
+          left: -4%;
+     }
+
+     .information .nav-item h4 {
+          width: 150px;
+     }
+
+     .information .nav-item:nth-child(2) {
+          right: -5%;
+     }
+
+     .information .nav-item:nth-child(3) {
+          right: -10%;
+          top: 70%;
+     }
+
+     .information .nav-item:nth-child(4) {
+          top: 100%;
+     }
+
+     .information .nav-item:nth-child(5) {
+          top: 55%;
+          left: -13%;
+     }
+
+     .information .nav-item:first-child .circle-btn {
+          right: 39%;
+     }
+
+     .information .tab-content {
+          overflow: hidden;
+     }
+}
+
+@media (max-width: 575.98px) {
+
+     .information .tab-content::after,
+     .information .tab-content::before {
+          display: none;
+     }
+
+     .information .tab-content {
+          overflow: inherit;
+          width: 350px;
+          height: 350px;
+     }
+
+     .information .tab-content::after,
+     .information .tab-content::before {
+          transform: scale(1.2);
+     }
+
+     .information .nav-item .nav-link h4 {
+          font-size: 13px;
+     }
+
+     .information .nav-link.active .circle-btn,
+     .information button:hover .circle-btn {
+          transform: scale(1.3);
+     }
+
+     .information .tab-content>.tab-pane p {
+          font-size: 12px;
+     }
+
+     .information .tab-content>.tab-pane {
+          padding: 1rem;
+     }
+
+     .information .tab-pane .content-img {
+          height: 50px;
+          width: 50px;
+     }
+
+     .information .tab-content>.tab-pane h4 {
+          font-size: 16px;
+          padding-bottom: 10px;
+     }
+
+     .information .tab-content a {
+          font-size: 12px;
+     }
+
+     .information .nav-item {
+          width: fit-content;
+          max-width: 140px;
+     }
+
+     .information .nav-item .nav-link h4 {
+          width: 100%;
+          padding-top: 1rem !important;
+     }
+
+     .information .nav-item:first-child {
+          top: 12%;
+          left: 10%;
+     }
+
+     .information .nav-item:not(:first-child) .circle-btn {
+          right: 26%;
+     }
+
+     .information .circle-btn {
+          width: 15px;
+          height: 15px;
+     }
+
+     .information .nav-item:nth-child(5) {
+          top: 66%;
+          left: 12%;
+     }
+
+     .information .nav-item:nth-child(4) {
+          right: 45%;
+     }
+
+     .information .nav-item:nth-child(2) {
+          right: 17%;
+     }
+
+     .information .nav-item:nth-child(3) {
+          right: 11%;
+     }
+}
+
+@media (max-width: 575.98px) {
+     .information .nav-item:first-child {
+          top: 9%;
+          left: 6%;
+     }
+
+     .information .nav-item:nth-child(5) {
+          top: 77%;
+          left: 10%;
+     }
+
+     .information .nav-item:nth-child(3) {
+          right: 8%;
+          top: 77%;
+     }
+
+     .information .nav-item:nth-child(2) {
+          right: 19%;
+          top: 7%;
+     }
+
+     .information .content-tab {
+          padding: 2rem 0;
+     }
+
+     .information {
+          padding: 60px 0;
+     }
+
+     .information h2 {
+          font-size: 25px;
+     }
+}
+
+@media (max-width: 440.98px) {
+     .information .nav-item:first-child {
+          top: 7%;
+          left: 0%;
+     }
+
+     .information .nav-item:nth-child(2) {
+          right: 12%;
+     }
+
+     .information .nav-item:nth-child(3) {
+          right: -2%;
+          top: 76%;
+     }
+
+     .information .nav-item:nth-child(5) {
+          top: 74%;
+          left: 0%;
+     }
+}
+
+@media (max-width: 380.98px) {
+     .information .nav-item:first-child {
+          top: 2%;
+          left: 6%;
+     }
+
+     .information .nav-item:nth-child(5) {
+          top: 82%;
+          left: 2%;
+     }
+
+     .information .nav-item:nth-child(3) {
+          right: 3%;
+          top: 85%;
+     }
+
+     .information .nav-item:nth-child(2) {
+          right: 9%;
+          top: 8%;
+     }
+
+     .container {
+          padding: 0 !important;
+     }
+
+     .information h2 {
+          padding-left: var(--bs-gutter-x, .75rem);
+          padding-right: var(--bs-gutter-x, .75rem);
+     }
+}
+
+
+@keyframes transitionS-1 {
+     0% {
+          animation-timing-function: ease-in;
+          transform: scale(1);
+     }
+
+     40% {
+          transform: scale(1.2);
+          opacity: .2;
+     }
+
+     100% {
+          animation-timing-function: ease-in-out;
+          transform: scale(1.4);
+          opacity: 0;
+     }
+}
+
+@keyframes transitionS-2 {
+     0% {
+          animation-timing-function: ease-in;
+          transform: scale(0);
+          opacity: 0;
+     }
+
+     40% {
+          transform: scale(1);
+          opacity: .2;
+     }
+
+     100% {
+          animation-timing-function: ease-in-out;
+          transform: scale(1.1);
+          opacity: 0;
+     }
+}
